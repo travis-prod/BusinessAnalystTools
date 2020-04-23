@@ -17,6 +17,8 @@ class CreateOutputTypeEnumsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name', 50);
+            $table->bigInteger('project_id');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
         });
     }
 
