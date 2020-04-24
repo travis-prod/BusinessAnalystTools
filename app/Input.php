@@ -2,29 +2,47 @@
 
 namespace App;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Input
  *
  * @property int $id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property int $entry_id
  * @property int $type_id
  * @property int $effectiveness
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Input newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Input newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Input query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Input whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Input whereEffectiveness($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Input whereEntryId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Input whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Input whereTypeId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Input whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @method static Builder|Input newModelQuery()
+ * @method static Builder|Input newQuery()
+ * @method static Builder|Input query()
+ * @method static Builder|Input whereCreatedAt($value)
+ * @method static Builder|Input whereEffectiveness($value)
+ * @method static Builder|Input whereEntryId($value)
+ * @method static Builder|Input whereId($value)
+ * @method static Builder|Input whereTypeId($value)
+ * @method static Builder|Input whereUpdatedAt($value)
+ * @mixin Eloquent
+ * @property int $count
+ * @property-read InputTypeEnum $inputTypeEnum
+ * @method static Builder|Input whereCount($value)
  */
 class Input extends Model
 {
-    //
+    protected $fillable = [
+        'count',
+        'effectiveness',
+    ];
+
+    protected $with = [
+        'inputTypeEnum',
+    ];
+
+    public function inputTypeEnum()
+    {
+        return $this->belongsTo(InputTypeEnum::class, 'type_id');
+    }
 }

@@ -2,27 +2,32 @@
 
 namespace App;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
  * App\InputTypeEnum
  *
  * @property int $id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property string $name
  * @property int $project_id
- * @method static \Illuminate\Database\Eloquent\Builder|\App\InputTypeEnum newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\InputTypeEnum newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\InputTypeEnum query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\InputTypeEnum whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\InputTypeEnum whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\InputTypeEnum whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\InputTypeEnum whereProjectId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\InputTypeEnum whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @method static Builder|InputTypeEnum newModelQuery()
+ * @method static Builder|InputTypeEnum newQuery()
+ * @method static Builder|InputTypeEnum query()
+ * @method static Builder|InputTypeEnum whereCreatedAt($value)
+ * @method static Builder|InputTypeEnum whereId($value)
+ * @method static Builder|InputTypeEnum whereName($value)
+ * @method static Builder|InputTypeEnum whereProjectId($value)
+ * @method static Builder|InputTypeEnum whereUpdatedAt($value)
+ * @mixin Eloquent
  */
 class InputTypeEnum extends Model
 {
-    //
+    protected $fillable = [
+        'name',
+    ];
 }

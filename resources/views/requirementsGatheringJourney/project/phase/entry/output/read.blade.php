@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Requirements Gathering Journey Project New Entry</title>
+    <title>Requirements Gathering Journey Project Phase Entry</title>
 </head>
 <body>
 
-{{--TODO NEW ENTRY PAGE--}}
-TODO NEW ENTRY PAGE
-
+<h1>{{$output->outputTypeEnum->name}}</h1>
+<p>Count: {{$output->count}}</p>
+<p>Effectiveness: {{$output->effectiveness}}</p>
 </body>
 </html>

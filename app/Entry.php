@@ -2,14 +2,17 @@
 
 namespace App;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Entry
  *
  * @property int $id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property int $phase_id
  * @property string $start_of_week
  * @property int $personal_feeling
@@ -17,22 +20,31 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $num_of_meetings
  * @property int $num_of_communications
  * @property int $understanding
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry whereClientFeeling($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry whereNumOfCommunications($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry whereNumOfMeetings($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry wherePersonalFeeling($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry wherePhaseId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry whereStartOfWeek($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry whereUnderstanding($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Entry whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @method static Builder|Entry newModelQuery()
+ * @method static Builder|Entry newQuery()
+ * @method static Builder|Entry query()
+ * @method static Builder|Entry whereClientFeeling($value)
+ * @method static Builder|Entry whereCreatedAt($value)
+ * @method static Builder|Entry whereId($value)
+ * @method static Builder|Entry whereNumOfCommunications($value)
+ * @method static Builder|Entry whereNumOfMeetings($value)
+ * @method static Builder|Entry wherePersonalFeeling($value)
+ * @method static Builder|Entry wherePhaseId($value)
+ * @method static Builder|Entry whereStartOfWeek($value)
+ * @method static Builder|Entry whereUnderstanding($value)
+ * @method static Builder|Entry whereUpdatedAt($value)
+ * @mixin Eloquent
+ * @property string $date
+ * @method static Builder|Entry whereDate($value)
  */
 class Entry extends Model
 {
-    //
+    protected $fillable = [
+        'date',
+        'personal_feeling',
+        'client_feeling',
+        'num_of_meetings',
+        'num_of_communications',
+        'understanding',
+    ];
 }

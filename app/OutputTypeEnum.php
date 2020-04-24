@@ -2,27 +2,32 @@
 
 namespace App;
 
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Carbon;
 
 /**
  * App\OutputTypeEnum
  *
  * @property int $id
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
  * @property string $name
  * @property int $project_id
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OutputTypeEnum newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OutputTypeEnum newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OutputTypeEnum query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OutputTypeEnum whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OutputTypeEnum whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OutputTypeEnum whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OutputTypeEnum whereProjectId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\OutputTypeEnum whereUpdatedAt($value)
- * @mixin \Eloquent
+ * @method static Builder|OutputTypeEnum newModelQuery()
+ * @method static Builder|OutputTypeEnum newQuery()
+ * @method static Builder|OutputTypeEnum query()
+ * @method static Builder|OutputTypeEnum whereCreatedAt($value)
+ * @method static Builder|OutputTypeEnum whereId($value)
+ * @method static Builder|OutputTypeEnum whereName($value)
+ * @method static Builder|OutputTypeEnum whereProjectId($value)
+ * @method static Builder|OutputTypeEnum whereUpdatedAt($value)
+ * @mixin Eloquent
  */
 class OutputTypeEnum extends Model
 {
-    //
+    protected $fillable = [
+        'name',
+    ];
 }

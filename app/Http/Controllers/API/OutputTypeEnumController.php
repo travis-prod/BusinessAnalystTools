@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
+use App\Http\Controllers\Web\Controller;
 use App\OutputTypeEnum;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class OutputTypeEnumController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -20,7 +22,7 @@ class OutputTypeEnumController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -30,8 +32,8 @@ class OutputTypeEnumController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -41,8 +43,8 @@ class OutputTypeEnumController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\OutputTypeEnum  $outputTypeEnum
-     * @return \Illuminate\Http\Response
+     * @param OutputTypeEnum $outputTypeEnum
+     * @return Response
      */
     public function show(OutputTypeEnum $outputTypeEnum)
     {
@@ -52,8 +54,8 @@ class OutputTypeEnumController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\OutputTypeEnum  $outputTypeEnum
-     * @return \Illuminate\Http\Response
+     * @param OutputTypeEnum $outputTypeEnum
+     * @return Response
      */
     public function edit(OutputTypeEnum $outputTypeEnum)
     {
@@ -63,9 +65,9 @@ class OutputTypeEnumController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\OutputTypeEnum  $outputTypeEnum
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param OutputTypeEnum $outputTypeEnum
+     * @return Response
      */
     public function update(Request $request, OutputTypeEnum $outputTypeEnum)
     {
@@ -75,8 +77,8 @@ class OutputTypeEnumController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\OutputTypeEnum  $outputTypeEnum
-     * @return \Illuminate\Http\Response
+     * @param OutputTypeEnum $outputTypeEnum
+     * @return Response
      */
     public function destroy(OutputTypeEnum $outputTypeEnum)
     {

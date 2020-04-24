@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Requirements Gathering Journey Project Outputs</title>
+    <title>Requirements Gathering Journey Project Edit Output</title>
 </head>
 <body>
 
-{{--TODO VIEW OUTPUTS PAGE--}}
-TODO VIEW OUTPUTS PAGE
+{{--TODO EDIT OUTPUT TYPE ENUM PAGE--}}
+TODO EDIT OUTPUT TYPE ENUM PAGE
 
 </body>
 </html>

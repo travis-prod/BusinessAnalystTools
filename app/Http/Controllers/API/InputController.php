@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
-use App\Phase;
+use App\Input;
+use App\Http\Controllers\Web\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
-class PhaseController extends Controller
+class InputController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function index()
     {
@@ -20,7 +22,7 @@ class PhaseController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function create()
     {
@@ -30,8 +32,8 @@ class PhaseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Response
      */
     public function store(Request $request)
     {
@@ -41,10 +43,10 @@ class PhaseController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Phase  $phase
-     * @return \Illuminate\Http\Response
+     * @param Input $input
+     * @return Response
      */
-    public function show(Phase $phase)
+    public function show(Input $input)
     {
         //
     }
@@ -52,10 +54,10 @@ class PhaseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Phase  $phase
-     * @return \Illuminate\Http\Response
+     * @param Input $input
+     * @return Response
      */
-    public function edit(Phase $phase)
+    public function edit(Input $input)
     {
         //
     }
@@ -63,11 +65,11 @@ class PhaseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Phase  $phase
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @param Input $input
+     * @return Response
      */
-    public function update(Request $request, Phase $phase)
+    public function update(Request $request, Input $input)
     {
         //
     }
@@ -75,10 +77,10 @@ class PhaseController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Phase  $phase
-     * @return \Illuminate\Http\Response
+     * @param Input $input
+     * @return Response
      */
-    public function destroy(Phase $phase)
+    public function destroy(Input $input)
     {
         //
     }

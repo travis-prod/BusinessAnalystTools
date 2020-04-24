@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Business Analyst Tools</h1>
-<a href="{{route('requirementsGatheringJourney')}}">
+<a href="{{route('requirementsGatheringJourneyProjects')}}">
     <div>
         <h2>Requirements Gathering Journey</h2>
         <p>A tool for tracking requirements gathering progress and impact.</p>

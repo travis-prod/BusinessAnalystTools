@@ -17,7 +17,7 @@ class CreateEntriesTable extends Migration
             $table->id();
             $table->timestamps();
             $table->bigInteger('phase_id');
-            $table->timestamp('start_of_week');
+            $table->timestamp('date');
             $table->unsignedSmallInteger('personal_feeling');
             $table->unsignedSmallInteger('client_feeling');
             $table->integer('num_of_meetings');
